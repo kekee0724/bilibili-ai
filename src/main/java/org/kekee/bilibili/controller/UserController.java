@@ -22,12 +22,17 @@ public class UserController {
      * @return User
      */
     @GetMapping("/getUserInfo")
-    public User getUserInfo(@RequestParam(name="UserName", defaultValue="可可") String name) {
+    public User getUserInfo(@RequestParam(name = "UserName", defaultValue = "可可") String name) {
         System.out.println("查询成功");
-        User user=new User();
+        User user = new User();
         user.setName(name);
         user.setAge(21);
         return user;
+    }
+
+    @GetMapping("/helloWorld")
+    public String hello() {
+        return "Hello World!";
     }
 
 }
